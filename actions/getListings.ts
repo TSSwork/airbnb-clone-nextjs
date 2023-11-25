@@ -1,4 +1,5 @@
 import prisma from "@/libs/prismadb";
+import { SafeListing } from "@/types";
 
 export type IListingParams = {
     userId?: string;
@@ -85,7 +86,7 @@ export default async function getListings(
             }
         });
  
-        const SafeListings = listings.map((listing) => ({
+        const SafeListings: SafeListing[] = listings.map((listing) => ({
             ...listing,
             createdAt: listing.createdAt.toISOString(),
         }));
