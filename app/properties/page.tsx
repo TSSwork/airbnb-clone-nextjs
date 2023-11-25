@@ -20,7 +20,7 @@ export default async function PropertiesPage() {
         userId: currentUser.id
     });
 
-    if (listings.length === 0) {
+    if (!listings || listings.length === 0) {
         return (
             <EmptyState
             title="No properties found"

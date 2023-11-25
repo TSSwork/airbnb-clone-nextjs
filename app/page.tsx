@@ -5,6 +5,8 @@ import Container from '@/components/container'
 import EmptyState from '@/components/emptystate';
 import { Listing } from '@prisma/client';
 
+export const revalidate = 2;
+
 type HomeProps = {
   searchParams: IListingParams
 } 
@@ -21,6 +23,7 @@ export default async function Home({
     )
   }
 
+  //@ts-ignore
   if (!listings || listings.length === 0) {
     return(
       <EmptyState showReset  />

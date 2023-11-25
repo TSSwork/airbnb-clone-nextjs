@@ -4,6 +4,8 @@ import EmptyState from '@/components/emptystate';
 import React from 'react'
 import FavoriteClient from './favoriteclient';
 
+export const revalidate = 2;
+
 export default async function FavouritesPage() {
     const currentUser = await getCurrentUser(); 
     if(!currentUser){

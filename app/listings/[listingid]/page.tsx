@@ -5,6 +5,8 @@ import React from 'react'
 import ListingClient from './listingclient';
 import getReservations from '@/actions/getReservations';
 
+export const revalidate = 2;
+
 type Iparams = {
     listingid? : string;
 }

@@ -4,6 +4,8 @@ import EmptyState from '@/components/emptystate';
 import React from 'react'
 import ReservationClient from './reservationclient';
 
+export const revalidate = 2;
+
 export default async function ReservationsPage() {
     const currentUser = await getCurrentUser();
 

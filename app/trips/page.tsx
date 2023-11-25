@@ -4,6 +4,8 @@ import EmptyState from '@/components/emptystate';
 import React from 'react'
 import TripsClient from './tripsclient';
 
+export const revalidate = 2;
+
 export default async function TripsPage() {
 
     const currentUser = await getCurrentUser();
