@@ -4,6 +4,8 @@ import EmptyState from '@/components/emptystate';
 import React from 'react'
 import PropertiesClient from './propertiesclient';
 
+export const revalidate = 2;
+
 export default async function PropertiesPage() {
 
     const currentUser = await getCurrentUser();
