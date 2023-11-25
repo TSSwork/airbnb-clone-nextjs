@@ -2,26 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
+html, body,
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+    height: 100%;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+/* add the code bellow */
+@layer utilities {
+    @layer responsive {
+      /* Hide scrollbar for Chrome, Safari and Opera */
+      .no-scrollbar::-webkit-scrollbar {
+          display: none;
+      }
+
+      /* Hide scrollbar for IE, Edge and Firefox */
+      .no-scrollbar {
+          -ms-overflow-style: none;  /* IE and Edge */
+          scrollbar-width: none;  /* Firefox */
+      }
+    }
   }
+
+  .leaflet-bottom,.leaflet-control,
+  .leaflet-pane,.leaflet-top {
+    z-index:0 !important;
+  }
+
+  .rdrMonth {
+    width: 100% !important;
+    @apply dark:text-white dark:bg-gray-900
+  }
+
+  .rdrCalendarWrapper{
+    width: 100% !important;
+    @apply rounded-xl text-xl dark:text-white dark:bg-gray-900
+  }
+
+  .rdrPprevButton{
+    @apply dark:bg-gray-800 text-white
+  }
+
+  .rdrNextButton{
+    @apply dark:bg-gray-800 text-white
+  }
+
+  .rdrDayNumber span{
+    @apply dark:text-gray-400
+  }
+
+  .rdrDayDisabled {
+    @apply dark:bg-gray-700 rounded-md
+  }
+
+  .rdrDayDisabled .rdrDayNumber span {
+    @apply dark:text-gray-300
+  }
+
+.rdrMonthAndYearPickers select {
+    @apply dark:text-white
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.rdrMonthPicker option, .rdrYearPicker option{
+  @apply dark:text-white dark:bg-gray-700 hover:bg-opacity-0
 }
+
